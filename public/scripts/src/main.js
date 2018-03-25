@@ -276,6 +276,7 @@ $(function(){
     })
   })
 
+  /*
   $('.input').on('click', function(e) {
     e.preventDefault()
 	
@@ -285,4 +286,5 @@ $(function(){
     var medical = isInDanger( textField, 3)
 	
   }
+  */
 })
