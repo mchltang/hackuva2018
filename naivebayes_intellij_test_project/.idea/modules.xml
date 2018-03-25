@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/safetrek-node-bootstrap-mchltang.iml" filepath="$PROJECT_DIR$/safetrek-node-bootstrap-mchltang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/naivebayes_intellij_test_project.iml" filepath="$PROJECT_DIR$/naivebayes_intellij_test_project.iml" />
     </modules>
   </component>
 </project>
