@@ -140,6 +140,11 @@ $(function(){
       }
     }
   })
+  
+  $('a.make-alarm-request').on('click', function(e) {
+    e.preventDefault()
+    /* do some shit */
+  })
 
   $('.use-addr').on('click', function(e) {
     e.preventDefault()
