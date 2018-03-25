@@ -25,9 +25,7 @@ ul#mobile-nav.side-nav
 .container
   .row
     .col.s12
-      form
-        input(type='text', name='text', value='')
-        input(type='submit', value='This is a button!')
+      button#button123(type='button') New Button
       p.flow-text
         | This demo and the underlying app can be used to simplify, understand and debug the authorization flow used by API. You can bootstrap your projects with this app to quickly set them up for consuming the API.
       .section
@@ -39,37 +37,19 @@ ul#mobile-nav.side-nav
           | . The code will then be exchanged by this app with authorization server for an 
           code access_token
           |  and a
-          .col.s12
-            form
-              input(type='text', name='text', value='')
-              input(type='submit', value='This is a button!')
-              | ;
-            p.flow-text
-              | This demo and the underlying app can be used to simplify, understand and debug the authorization flow used by API. You can bootstrap your projects with this app to quickly set them up for consuming the API.
-            .section
-              h5.grey-text.text-darken-1 Step 1
-              .divider
-              p
-                | First step is to request to authenticate your app and your user by providing you with an 
-                code authorization_code
-                | . The code will then be exchanged by this app with authorization server for an 
-                code access_token
-                |  and a
-                code refresh_token
-                | . The retrieved code and tokens will be available for your reference in Step 2.
-              .row
-                .col.s12.m4.offset-m4.center-align
-                  a.safetrek-btn(href='#')
-                    img.responsive-img(src='/assets/images/safetrek-connect-button.png', alt='Connect to #{company_name}')
-                  .connecting.hide
-                    h5.blue-text.text-darken-4 Connecting...
-                    .progress.blue.darken-3
-                      .indeterminate.blue.darken-1
           code refresh_token
           | . The retrieved code and tokens will be available for your reference in Step 2.
         .row
           .col.s12.m4.offset-m4.center-align
-            a.safetrek-btn(href='#')
+            a.safetrek-btn(
+                href='#'
+                data-href=auth_url
+                data-redirect=redirect_uri
+                data-protocol=protocol
+                data-localhost=localhost
+                data-port=port
+                data-callback=callback
+              )
               img.responsive-img(src='/assets/images/safetrek-connect-button.png', alt='Connect to #{company_name}')
             .connecting.hide
               h5.blue-text.text-darken-4 Connecting...
