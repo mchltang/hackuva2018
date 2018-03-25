@@ -6,7 +6,7 @@ $(function(){
   
   var isInDanger = (function (message, dictionaryNumber) {
     console.log("entered isInDanger")
-		var threshold = 100000
+		var threshold = 10000
 		
 		var stems = []
 		$.getJSON( "stems.json", function( data){
