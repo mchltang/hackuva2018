@@ -3,20 +3,17 @@ import Hammer from 'hammerjs'
 import 'materialize-css'
 
 $(function(){
-  
+
   var isInDanger = function (message, dictionaryNumber) {
 		var threshold = 100000
-		
 		var stems = [];
 		$.getJSON( "stems.json", function( data){
 		stems = data;
 		});
-		
 		var stopwords = [];
 		$.getJSON( "stopwords.json", function( data){
 		stopwords = data;
 		});
-		
 		var dictionary = [];
 		if(dictionaryNumber == 1) {
 			$.getJSON( "police.json", function( data){
@@ -33,7 +30,6 @@ $(function(){
 			medicalDictionary = data;
 			});
 		}
-		
         var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ");
         var toProcess = (splited.slice(0).slice(0));
         var stemmedWords = ([]);
@@ -48,15 +44,13 @@ $(function(){
                 }
             }
         }    
-      
         var stopwordsNoPunctuation = ([]);
         for (var index5513 = 0; index5513 < stopwords.length; index5513++) {
             var currWord = stopwords[index5513];
             {
                 /* add */ (stopwordsNoPunctuation.push(/* replaceAll */ currWord.replace(new RegExp("[^a-zA-Z ]", 'g'), "")) > 0);
             }
-        }
-      
+        }      
         /* removeAll */ (function (a, r) { var b = false; for (var i = 0; i < r.length; i++) {
             var ndx = a.indexOf(r[i]);
             if (ndx >= 0) {
@@ -64,8 +58,7 @@ $(function(){
                 b = true;
             }
         } return b; })(stemmedWords, stopwordsNoPunctuation);
-        var noDuplicates = (stemmedWords.slice(0));
-      
+        var noDuplicates = (stemmedWords.slice(0));   
         var totalProbability = 1.0;
         for (var index5514 = 0; index5514 < noDuplicates.length; index5514++) {
             var currWord = noDuplicates[index5514];
@@ -80,7 +73,7 @@ $(function(){
         }
         return false;
     };
-  
+
   const CALLBACK_URL =  '/callback'
   const SAFETREK_API_URL =  'https://api-sandbox.safetrek.io/v1'
   const DEFAULT_ACCURACY =  5
@@ -90,7 +83,6 @@ $(function(){
   const log = console.log
   const logErr = console.error
   const logWarn = console.warn
-
   let state = new Map
   const setState = (key, val, verbose = false) => {
     ls.setItem(key, val)
@@ -218,11 +210,6 @@ $(function(){
       }
     }
   })
-  
-    $('a.calculate-probability').on('click', function(e) {
-    e.preventDefault()
-    
-  })
 
   $('.use-addr').on('click', function(e) {
     e.preventDefault()
@@ -285,4 +272,5 @@ $(function(){
     var medical = isInDanger( textField, 3)
 	
   }
+  
 })
