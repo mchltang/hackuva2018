@@ -141,7 +141,7 @@ $(function(){
     }
   })
   
-  $('a.make-alarm-request').on('click', function(e) {
+  $('a.calculate-probability').on('click', function(e) {
     e.preventDefault()
     /* do some shit */
   })
