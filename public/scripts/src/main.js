@@ -280,12 +280,16 @@ $(function(){
   $('button#button123').on('click', function(e) {
     e.preventDefault()
     
-    //var textField = $('').val()
+    var textField = "car accident on I-95 gasoline fire backup needed"
     console.log("The button was clicked.")
     //console.log(textField)
-    //var police = isInDanger( textField, 1)
-    //var fire = isInDanger( textField, 2)
-    //var medical = isInDanger( textField, 3)
+    var police = isInDanger( textField, 1)
+    var fire = isInDanger( textField, 2)
+    var medical = isInDanger( textField, 3)
+    console.log(police)
+    console.log(fire)
+    console.log(medical)
+    
 	
   })
   
