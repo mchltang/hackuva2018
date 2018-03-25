@@ -262,5 +262,15 @@ $(function(){
       log('Using random location coordinates.')
     })
   })
+
+  $(('.input').on('click', function(e) {
+    e.preventDefault()
+	/*
+	var textField = $('input[type="text"]').attr("value")
+    var police = isInDanger( textField, 1)
+    var fire = isInDanger( textField, 2)
+    var medical = isInDanger( textField, 3)
+	*/
+  }
   
 })
