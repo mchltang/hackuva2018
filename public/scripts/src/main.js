@@ -140,11 +140,6 @@ $(function(){
       }
     }
   })
-  
-  $('a.calculate-probability').on('click', function(e) {
-    e.preventDefault()
-    /* do some shit */
-  })
 
   $('.use-addr').on('click', function(e) {
     e.preventDefault()
