@@ -5,8 +5,7 @@ import 'materialize-css'
 $(function(){
   
   var isInDanger = (function (message, dictionaryNumber) {
-    console.log("entered isInDanger")
-		var threshold = 10000
+		var threshold = 50
 		
 		var stems = []
 		$.getJSON( "stems.json", function( data){
@@ -35,6 +34,9 @@ $(function(){
 			})
 		}
 		
+		console.log(stems[0])
+		console.log(stopwords[0])
+		
     var splited = message.replace(new RegExp("[^a-zA-Z ]", 'g'), "").toLowerCase().split(" ")
     var toProcess = (splited.slice(0).slice(0))
     var stemmedWords = ([])
@@ -49,6 +51,8 @@ $(function(){
             }
         }
     }    
+	
+	console.log(stemmedWords)
       
     var stopwordsNoPunctuation = ([])
     for (var index5513 = 0; index5513 < stopwords.length; index5513++) {
